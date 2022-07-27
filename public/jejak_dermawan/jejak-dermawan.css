@@ -1,0 +1,507 @@
+@font-face {
+    font-family: 'Caveat-SemiBold';
+    src: url('/jejak_dermawan/Caveat-SemiBold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DK Midnight Chalker';
+    src: url('/jejak_dermawan/DK Midnight Chalker.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.Loop {
+    position: relative;
+    height: 100%;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+section {
+    position: relative;
+    text-align: center;
+    height: 100%;
+    scroll-snap-align: start;
+}
+
+::scrollbar {
+    display: none;
+}
+
+body {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 100%;
+    position: relative;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: normal 10.6666666667px 'Titillium Web', sans-serif;
+    background: linear-gradient(54deg, #9164ff, #8bfff4);
+    color: #3c3f64;
+    overflow-x: hidden;
+}
+
+.timeline {
+    /* background-image: url("https://act-sites.s3.ap-southeast-1.amazonaws.com/image/jejak-kaki.png"); */
+    /* background-position: center; */
+    /* background-repeat: repeat-y; */
+}
+
+.timeline .timeline-content {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+}
+
+.timeline .timeline-content .timeline-left {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    width: 50%;
+}
+
+.timeline .timeline-content .timeline-right {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    width: 50%;
+}
+
+.timeline .timeline-content:nth-of-type(odd) div {
+    transform: translate3d(100px, -10px, 0) rotate(10deg);
+}
+
+.timeline .timeline-content:nth-of-type(even) div {
+    transform: translate3d(-100px, -10px, 0) rotate(10deg);
+}
+
+.timeline .timeline-content.in-view .timeline-right,
+.timeline .timeline-content.in-view .timeline-left {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+}
+
+.timeline .timeline-content .timeline-right.timeline-text,
+.timeline .timeline-content .timeline-left.timeline-text {
+    font-family: 'Caveat-SemiBold';
+    color: white;
+    font-size: 2.5rem;
+    padding: 3rem;
+    display: flex;
+    flex-flow: column;
+}
+
+.timeline .timeline-content .timeline-right.timeline-text {
+    padding-left: 7rem;
+}
+
+.timeline .timeline-content div.timeline-text.left {
+    text-align: left;
+}
+
+.timeline .timeline-content div.timeline-text.center {
+    text-align: center;
+}
+
+.timeline .timeline-content div.timeline-text.right {
+    text-align: right;
+}
+
+.timeline .timeline-content div.timeline-text.top {
+    justify-content: start;
+}
+
+.timeline .timeline-content div.timeline-text.middle {
+    justify-content: center;
+}
+
+.timeline .timeline-content div.timeline-text.botom {
+    justify-content: end;
+}
+
+.timeline .timeline-content div.timeline-img img,
+.timeline .timeline-content div.timeline-img img {
+    width: 75%;
+}
+
+.timeline .timeline-content .timeline-right.timeline-img,
+.timeline .timeline-content .timeline-left.timeline-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline .timeline-content div.timeline-img.top {
+    align-items: flex-start;
+}
+
+.timeline .timeline-content div.timeline-img.middle {
+    align-items: center;
+}
+
+.timeline .timeline-content div.timeline-img.botom {
+    align-items: flex-end;
+}
+
+.timeline .timeline-content div.timeline-img.left {
+    justify-content: left;
+}
+
+.timeline .timeline-content div.timeline-img.center {
+    justify-content: center;
+}
+
+.timeline .timeline-content div.timeline-img.right {
+    justify-content: right;
+}
+
+.timeline .timeline-title {
+    font-family: "DK Midnight Chalker";
+    font-size: 5rem;
+    color: #e58e00;
+    margin-bottom: 1.5rem;
+}
+
+.text-green-jk {
+    color: #299249!important;
+}
+
+.timeline-bg.first {
+    height: 60%;
+    bottom: 0;
+}
+
+.timeline-bg.last {
+    height: 60%;
+    top: 0;
+}
+
+.timeline-bg {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    transform: unset !important;
+    left: 50%;
+    background-size: contain;
+}
+
+@media screen and (max-width: 900px) {
+    .timeline {
+        background-position: left;
+    }
+    .timeline .timeline-content {
+        flex-flow: column;
+    }
+    .timeline .timeline-content .timeline-left {
+        width: 100%;
+        text-align: right;
+    }
+    .timeline .timeline-content .timeline-right {
+        width: 100%;
+        text-align: right;
+    }
+    .timeline .timeline-content .timeline-right.timeline-text,
+    .timeline .timeline-content .timeline-left.timeline-text {
+        font-size: 1.5rem;
+        padding: 2rem;
+    }
+    .timeline .timeline-title {
+        font-size: 3rem;
+    }
+    .timeline-bg {
+        left: 0%;
+    }
+    .timeline .timeline-content,
+    .timeline .timeline-content {
+        padding-left: 4rem;
+    }
+}
+
+
+/* COMMON */
+
+.padding-xs {
+    padding: .25em;
+}
+
+.padding-sm {
+    padding: .5em;
+}
+
+.padding-md {
+    padding: 1em;
+}
+
+.padding-lg {
+    padding: 1.5em;
+}
+
+.padding-xl {
+    padding: 3em;
+}
+
+.padding-x-xs {
+    padding: .25em 0;
+}
+
+.padding-x-sm {
+    padding: .5em 0;
+}
+
+.padding-x-md {
+    padding: 1em 0;
+}
+
+.padding-x-lg {
+    padding: 1.5em 0;
+}
+
+.padding-x-xl {
+    padding: 3em 0;
+}
+
+.padding-y-xs {
+    padding: 0 .25em;
+}
+
+.padding-y-sm {
+    padding: 0 .5em;
+}
+
+.padding-y-md {
+    padding: 0 1em;
+}
+
+.padding-y-lg {
+    padding: 0 1.5em;
+}
+
+.padding-y-xl {
+    padding: 0 3em;
+}
+
+.padding-top-xs {
+    padding-top: .25em;
+}
+
+.padding-top-sm {
+    padding-top: .5em;
+}
+
+.padding-top-md {
+    padding-top: 1em;
+}
+
+.padding-top-lg {
+    padding-top: 1.5em;
+}
+
+.padding-top-xl {
+    padding-top: 3em;
+}
+
+.padding-right-xs {
+    padding-right: .25em;
+}
+
+.padding-right-sm {
+    padding-right: .5em;
+}
+
+.padding-right-md {
+    padding-right: 1em;
+}
+
+.padding-right-lg {
+    padding-right: 1.5em;
+}
+
+.padding-right-xl {
+    padding-right: 3em;
+}
+
+.padding-bottom-xs {
+    padding-bottom: .25em;
+}
+
+.padding-bottom-sm {
+    padding-bottom: .5em;
+}
+
+.padding-bottom-md {
+    padding-bottom: 1em;
+}
+
+.padding-bottom-lg {
+    padding-bottom: 1.5em;
+}
+
+.padding-bottom-xl {
+    padding-bottom: 3em;
+}
+
+.padding-left-xs {
+    padding-left: .25em;
+}
+
+.padding-left-sm {
+    padding-left: .5em;
+}
+
+.padding-left-md {
+    padding-left: 1em;
+}
+
+.padding-left-lg {
+    padding-left: 1.5em;
+}
+
+.padding-left-xl {
+    padding-left: 3em;
+}
+
+.margin-xs {
+    margin: .25em;
+}
+
+.margin-sm {
+    margin: .5em;
+}
+
+.margin-md {
+    margin: 1em;
+}
+
+.margin-lg {
+    margin: 1.5em;
+}
+
+.margin-xl {
+    margin: 3em;
+}
+
+.margin-x-xs {
+    margin: .25em 0;
+}
+
+.margin-x-sm {
+    margin: .5em 0;
+}
+
+.margin-x-md {
+    margin: 1em 0;
+}
+
+.margin-x-lg {
+    margin: 1.5em 0;
+}
+
+.margin-x-xl {
+    margin: 3em 0;
+}
+
+.margin-y-xs {
+    margin: 0 .25em;
+}
+
+.margin-y-sm {
+    margin: 0 .5em;
+}
+
+.margin-y-md {
+    margin: 0 1em;
+}
+
+.margin-y-lg {
+    margin: 0 1.5em;
+}
+
+.margin-y-xl {
+    margin: 0 3em;
+}
+
+.margin-top-xs {
+    margin-top: .25em;
+}
+
+.margin-top-sm {
+    margin-top: .5em;
+}
+
+.margin-top-md {
+    margin-top: 1em;
+}
+
+.margin-top-lg {
+    margin-top: 1.5em;
+}
+
+.margin-top-xl {
+    margin-top: 3em;
+}
+
+.margin-right-xs {
+    margin-right: .25em;
+}
+
+.margin-right-sm {
+    margin-right: .5em;
+}
+
+.margin-right-md {
+    margin-right: 1em;
+}
+
+.margin-right-lg {
+    margin-right: 1.5em;
+}
+
+.margin-right-xl {
+    margin-right: 3em;
+}
+
+.margin-bottom-xs {
+    margin-bottom: .25em;
+}
+
+.margin-bottom-sm {
+    margin-bottom: .5em;
+}
+
+.margin-bottom-md {
+    margin-bottom: 1em;
+}
+
+.margin-bottom-lg {
+    margin-bottom: 1.5em;
+}
+
+break {
+    flex-basis: 100%;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+}
